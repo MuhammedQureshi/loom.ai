@@ -1,3 +1,4 @@
+"use client"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -7,13 +8,24 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import UserAvatar from "./UserAvatar"
+import { Session } from "next-auth"
+import { Button } from "./ui/button"
+import { signIn } from "next-auth/react"
 
 
-function UserButton() {
+function UserButton({ session }: {session: Session | null}) {
+
+  if(!session) return (
+    <Button variant={'outline'} onClick={() => signIn()}>
+      Sign In
+    </Button>
+  )
+
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <UserAvatar name="Muhammed" image="https://github.com/shadcn.png" />
+        <UserAvatar name={session.user?.name} image={session.user?.image} />
       </DropdownMenuTrigger>
     <DropdownMenuContent>
       <DropdownMenuLabel>My Account</DropdownMenuLabel>
