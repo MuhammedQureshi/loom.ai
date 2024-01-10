@@ -1,7 +1,9 @@
+
+
 function PricingCards() {
-  return (
-    <div>PricingCards</div>
-  )
+return (
+<div>PricingCards</div>
+)
 }
 
 export default PricingCards
