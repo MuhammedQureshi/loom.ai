@@ -1,5 +1,3 @@
-
-
 function PricingCards() {
   return (
     <div>PricingCards</div>
