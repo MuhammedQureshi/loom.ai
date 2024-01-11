@@ -1,4 +1,4 @@
-import demoImg from '@/images/landingPage/demoImg.jpg'
+import demoGif from '@/images/landingPage/demo.gif'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -46,7 +46,7 @@ export default function Home() {
               <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset □ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
                   <Image
                   unoptimized
-                  src={demoImg}
+                  src={demoGif}
                   alt="App screenshot"
                   width={2432}
                   height={1442}
