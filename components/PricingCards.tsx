@@ -1,4 +1,6 @@
 import { CheckIcon } from "lucide-react";
+import Link from "next/link";
+import CheckoutButton from "./CheckoutButton";
 
 const tiers = [
     {
@@ -43,7 +45,7 @@ return (
                     <div>
                         <h3
                         id={tier.id + tier.name}
-                        className="text-base font-semibold leading-7 Otext-indigo-600">
+                        className="text-base font-semibold leading-7 text-indigo-600">
                             {tier.name}
                         </h3>
                         <div className="mt-4 flex items-baseline gap-x-2">
@@ -79,7 +81,16 @@ return (
                         </ul>
                     </div>
 
-
+                     {redirect ? (
+                        <Link href='/register' className="mt-8 block rounded-md bg-indigo-600 px-3.5 py-2 text-center text-sm font-semibold
+                        leading-6 text-white shadow-sn hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2
+                        focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer
+                        disabled:opacity-80">
+                            Get Started Today
+                        </Link>
+                     ) : (
+                         tier.id && <CheckoutButton />
+                     )}
                 </div>
             ))}
         </div>
